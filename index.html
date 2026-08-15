@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Search visibility: this page requests exclusion from indexing. This is a request to
+     crawlers, not access control. Do not add a sitemap entry for this page. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<title>Tower Delver: AI-Augmented Product Development Case Study</title>
+<meta name="description" content="How I directed AI development agents to turn an original game concept into a tested, playable product while owning strategy, scope, quality, and acceptance decisions.">
+<meta name="theme-color" content="#0a0e17">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tower Delver: AI-Augmented Product Development Case Study">
+<meta property="og:description" content="An original party-based RPG roguelite, taken from concept to a tested, playable vertical slice, together with the human-directed AI workflow that delivered it.">
+<meta property="og:image" content="https://jeiku.github.io/tower-delver-case-study/assets/demo-poster.webp">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<main id="main">
+
+<!-- ============================================================ Hero -->
+<section class="hero" aria-labelledby="headline">
+  <div class="hero__text">
+    <p class="eyebrow">Independent Product · Founder &amp; Product Owner · 2026–Present</p>
+
+    <h1 id="headline">Tower Delver: From Original Concept to Tested, Playable Vertical Slice</h1>
+
+    <p class="lede">I own the vision, scope, requirements, trade-offs, playtesting, and acceptance decisions. AI development agents extend my capacity across implementation, testing, and documentation.</p>
+
+    <p class="productline">Party-based JRPG roguelite · TypeScript · Phaser 4 · Vite · Vitest · Playable vertical slice in active development</p>
+
+    <!-- The gate card's wording is fixed: "Automated Test" (not "Test") and
+         "Owner Playtest" (not "Playtest"). Do not shorten them to fit a layout. -->
+    <ul class="metrics">
+      <li class="metric">
+        <p class="metric__value">10</p>
+        <p class="metric__label">Major player-facing systems delivered</p>
+      </li>
+      <li class="metric">
+        <p class="metric__value metric__value--phrase">4-stage approval gate</p>
+        <p class="metric__label">Build · Typecheck · Automated Test · Owner Playtest</p>
+      </li>
+      <li class="metric">
+        <p class="metric__value">11</p>
+        <p class="metric__label">Human-led curation rounds</p>
+      </li>
+    </ul>
+
+    <p class="hero__actions">
+      <a class="btn btn--primary" href="#demo">Watch the demo</a>
+      <a class="btn" href="#summary">Read the case study</a>
+    </p>
+  </div>
+
+  <figure class="hero__figure">
+    <img src="assets/hero-gameplay.webp" width="1920" height="1080" decoding="async"
+         alt="Tower Delver combat: a four-character party of Knight, Wizard, Cleric, and Thief facing a slime and a bat, with the turn-order timeline, command menu, and per-character HP and MP bars on screen.">
+    <figcaption><b>Decision demonstrated:</b> I validated the full player loop (exploration, visible encounters, tactical battle, progression, and the next-room decision) before treating the current visuals as final.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ Product demonstration -->
+<section id="demo" class="section" aria-labelledby="demo-h">
+  <h2 id="demo-h">See the product, then see how it was delivered</h2>
+
+  <p class="takeaway-lead">This short demo shows the current playable loop: exploration with visible threats, turn-based class combat, and the run systems behind them. It can be understood without audio, and a scene-by-scene video description is available below.</p>
+
+  <!-- Click-to-load facade. With JavaScript unavailable this anchor simply opens the video
+       on its host, so the demo is always reachable. Nothing third-party loads until the
+       visitor chooses to load it. Nothing plays on page load. -->
+  <div class="video" id="video-slot"
+       data-embed="https://www.youtube-nocookie.com/embed/1MUXgs1AHEg?autoplay=1&amp;rel=0"
+       data-title="Tower Delver product demo">
+    <a class="video__facade" href="https://youtu.be/1MUXgs1AHEg" rel="noopener">
+      <img src="assets/demo-poster.webp" width="1280" height="720" loading="lazy" decoding="async"
+           alt="Tower Delver combat, shown as the still poster for the product demo video.">
+      <span class="video__play" aria-hidden="true"></span>
+      <span class="video__cta">Play the demo</span>
+    </a>
+  </div>
+
+  <p class="video__link">
+    <a href="https://youtu.be/1MUXgs1AHEg" rel="noopener">Watch the demo on YouTube</a>
+  </p>
+
+  <details class="vdesc">
+    <summary>Video description</summary>
+    <div class="vdesc__body">
+      <p>A scene-by-scene description of the demo, for anyone who cannot or would rather not watch it.</p>
+      <ol>
+        <li>The demo opens in top-down exploration. The party moves through a tower room with an enemy visible on screen ahead. Threats are seen before they are fought, not hidden or randomly triggered.</li>
+        <li>Contact with the enemy transitions the view into a turn-based battle, against a slime and a bat. A turn-order timeline runs along the top of the screen and each party member has its own health and magic readouts.</li>
+        <li>The Wizard casts Firewall. A burn status is applied to the slime and is visible on it as the fight continues.</li>
+        <li>The battle is won and a character levels up.</li>
+        <li>Exploration resumes. The player touches a Shrine of Blood and pays some of the party's health for its effect.</li>
+        <li>A second encounter follows, against a gnawer, fought with the party already at low health and poisoned. It shows that the run's accumulated damage and status effects carry into the next fight rather than resetting.</li>
+        <li>Exploration resumes again, and a trap in the room damages the player.</li>
+        <li>In a battle room, the player opens a chest and receives an item.</li>
+        <li>The demo ends.</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================ Executive summary -->
+<section id="summary" class="section" aria-labelledby="summary-h">
+  <h2 id="summary-h">Executive summary</h2>
+  <p>Tower Delver began with a practical question: could one person validate a strategically deep game loop without an engineering, design, and QA team? I defined the vision, roadmap, scope, requirements, acceptance criteria, and approval gates, and directed AI development agents to accelerate planning, implementation, testing, and documentation. The result is a playable vertical slice (a complete run from party selection through exploration, turn-based battles, progression, and a boss) spanning ten major player-facing systems. Implementation milestones were governed by a four-stage approval gate: build, typecheck, automated tests, and owner playtesting. AI increased execution capacity; product direction, trade-offs, quality judgment, and approval stayed mine.</p>
+</section>
+
+<!-- ============================================================ Product problem and MVP thesis -->
+<section class="section" aria-labelledby="problem-h">
+  <h2 id="problem-h">Product problem and MVP thesis</h2>
+  <p>Party-based RPGs earn their depth from class and combat strategy, but proving it normally takes a team's worth of engineering capacity. Roguelites earn replayability from procedural variety, which erodes the deliberate encounter design the genre depends on. Working alone, I had a hard capacity ceiling. The riskiest assumption was never whether one system could be built, but whether exploration, visible threats, tactical battles, progression, and room-to-room choice would hold together as one loop worth playing.</p>
+  <p>So the complete loop became the MVP, not a narrow polished slice of it. If it was compelling before final art and production content, the product would justify deeper investment; if not, I would find out early and cheaply. I built end-to-end behavior first, then improved individual systems through gated milestones and playtesting. What you see here is the current in-development state, not final production art.</p>
+  <p class="takeaway"><b>Decision demonstrated:</b> I validated the full player loop before treating the current visuals as final.</p>
+</section>
+
+<!-- ============================================================ Human-directed AI workflow -->
+<section class="section" aria-labelledby="workflow-h">
+  <h2 id="workflow-h">Human-directed AI workflow</h2>
+  <p>I treated AI as an execution layer inside a product system, not as the product owner. Each workstream began with a bounded problem, explicit scope and non-goals, source-of-truth rules, acceptance criteria, and a stop gate. Agents proposed alternatives, implemented approved work, generated tests, and audited consistency. I reviewed the output, playtested the product, rejected inadequate results, changed the requirements when the evidence justified it, and approved or rejected milestone results.</p>
+  <p>I used ChatGPT for product analysis and requirements development, and Claude Code for repository-based implementation, testing, and audit work.</p>
+
+  <!-- Workflow diagram, rendered as real layout. The text alternative below the steps is
+       visible to everyone; nothing here is carried by shape or color alone. -->
+  <div class="flow">
+    <ol class="flow__steps">
+      <li class="flow__step"><span class="flow__n">1</span>Frame the problem</li>
+      <li class="flow__step"><span class="flow__n">2</span>Define scope, non-goals, and acceptance gates</li>
+      <li class="flow__step"><span class="flow__n">3</span>Direct AI-assisted implementation</li>
+      <li class="flow__step"><span class="flow__n">4</span>Run automated validation</li>
+      <li class="flow__step"><span class="flow__n">5</span>Owner review and playtest</li>
+      <li class="flow__step flow__step--gate"><span class="flow__n">6</span>Revise or approve</li>
+    </ol>
+    <p class="flow__loop"><span aria-hidden="true">↺</span> Revise returns the work to step 2. Approve closes the milestone.</p>
+    <p class="flow__alt">Work begins with the owner framing a problem and defining scope, non-goals, and acceptance gates. AI agents assist with execution and automated validation. The owner reviews and playtests the result, then either revises the requirements or approves the milestone.</p>
+  </div>
+
+  <div class="tablewrap" role="region" aria-label="Responsibility split" tabindex="0">
+  <table class="split">
+    <caption>Responsibility split</caption>
+    <thead>
+      <tr><th scope="col">I owned</th><th scope="col">AI assisted with</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Product vision, priorities, scope, and non-goals</td><td>Requirements analysis and draft alternatives</td></tr>
+      <tr><td>Product and architecture decisions</td><td>Implementation and refactoring proposals</td></tr>
+      <tr><td>Acceptance criteria and approval gates</td><td>Automated-test creation and audit support</td></tr>
+      <tr><td>Playtesting and quality judgment</td><td>Documentation and consistency analysis</td></tr>
+      <tr><td>Approval, rejection, and accountability</td><td>Execution inside approved constraints</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="takeaway"><b>Risk addressed:</b> explicit gates kept technically complete AI output from becoming accepted product behavior without human review.</p>
+
+  <!-- Sanitized excerpt, recreated as semantic HTML rather than a flattened image so the text
+       stays selectable, translatable, and screen-reader readable. Quotation and paraphrase
+       must stay visually distinct and labelled. -->
+  <figure class="evidence">
+    <div class="evidence__card">
+      <p class="evidence__label">Sanitized excerpt from a Tower Delver milestone contract</p>
+
+      <p class="evidence__kind evidence__kind--quote">Quoted from the contract<span class="evidence__hint"> · source wording preserved; punctuation and formatting normalized for this page; square brackets mark a redaction</span></p>
+      <blockquote class="evidence__quote">
+<pre>Implement [this milestone] ONLY. Do not start [the next milestone]. Stop for user approval when done.
+
+Non-Goals (do NOT implement)
+  • Enemies or rewards in the room; route/room-type redesign; battle or Pause-menu heal changes.
+
+Acceptance Criteria
+  • Held/repeated/overlapping input produces exactly one transaction, one SFX, one green glow.
+
+Verification Checklist (manual)
+  • Save + quit + Continue → still used; party HP/MP + used state restored together.
+
+Do not mark [the milestone] Complete unless every acceptance criterion is implemented AND user-verified.
+Never claim user-approval without explicit user approval in chat.</pre>
+      </blockquote>
+
+      <p class="evidence__kind evidence__kind--para">Paraphrase, written for this page, not from the document</p>
+      <p class="evidence__para">Every milestone got one of these before any code was written. 255 of them are in the repository. The non-goals mattered as much as the goals: they are what stopped an agent from helpfully expanding the work.</p>
+
+      <p class="evidence__note">In these documents, “user” means me, the owner. It is not a reference to a player.</p>
+    </div>
+    <figcaption><b>Risk addressed:</b> the milestone contract made scope, non-goals and acceptance gates explicit before implementation began, and required the work to stop for owner approval. Sanitized excerpt; quoted lines are marked, with punctuation normalized for this page.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ Flagship decision -->
+<section class="section" aria-labelledby="decision-h">
+  <h2 id="decision-h">Choosing the right amount of automation</h2>
+
+  <h3>Situation</h3>
+  <p>Tower Delver needed more battle-room variety than I could efficiently hand-author at the desired pace. Full runtime generation promised near-infinite combinations, but also harder autotiling, a runtime validation and reroll apparatus, determinism concerns, and the risk that technically valid rooms would still read as flat.</p>
+
+  <h3>Options</h3>
+  <p>Three designs, not one fork in the road. The first assembled rooms at runtime from prefab chunks; I rejected it because it could not deliver deliberate set-pieces. The second kept runtime generation over a 12–18-piece authored library whose content overhead was disproportionate for a solo product; I replaced it within a week.</p>
+
+  <h3>Decision</h3>
+  <p>The third moved generation offline: generate, curate by hand, validate, then admit the room to an approved runtime pool. A tool emits seeded candidates with structural wiring, hazards, lighting, and lint results. I correct composition, readability, and atmosphere before a room enters the playable build. Approved rooms stay static, editable files at runtime.</p>
+
+  <h3>Result</h3>
+  <p>Runtime validation and reroll machinery never entered the current architecture. A passing validator was never treated as approval: eleven rounds of curation converged the generator's room grammar, and every candidate was hand-adjusted before it entered the runtime pool. Each records the generator revision and seed behind it.</p>
+
+  <!-- Both images are exactly 937 x 1760 and must keep identical framing. Sides are
+       labelled in visible text, never by position alone. -->
+  <figure class="ba">
+    <div class="ba__pair">
+      <div class="ba__side">
+        <p class="ba__label"><b>Generated candidate</b> · Structurally valid, not approved</p>
+        <img src="assets/room-generated-candidate.webp" width="937" height="1760" loading="lazy" decoding="async"
+             alt="Unapproved generated battle-room candidate: a tall L-shaped chamber in uniform gray stone with a single corridor, two wall alcoves, a central hearth, and no props or wall detail.">
+      </div>
+      <div class="ba__side">
+        <p class="ba__label"><b>Owner-curated room</b> · Readability, structure, and atmosphere refined</p>
+        <img src="assets/room-owner-curated.webp" width="937" height="1760" loading="lazy" decoding="async"
+             alt="The same battle room after owner curation, with a warm earth floor replacing the gray stone, a built-out upper-left chamber, brass wall sconces, and pipework running along the walls.">
+      </div>
+    </div>
+
+    <ul class="ba__changes">
+      <li><b>Warm earth floor replaces cold gray stone:</b> 128 changed floor tiles; the single largest readability and atmosphere change.</li>
+      <li><b>Upper-left chamber built out:</b> a structural change, not decoration; the candidate has a bare corridor where the curated room has a room.</li>
+      <li><b>Wall sconces added:</b> 4 new wall-decor tiles; light sources read as objects, not just glow.</li>
+      <li><b>Pipework added along the walls:</b> 16 new foreground-prop tiles; environmental storytelling.</li>
+    </ul>
+
+    <figcaption><b>What changed after evaluation:</b> the same room, same generator revision and seed, at identical scale and crop. Curation hand-edited 221 tiles across eight layers (a new floor treatment, a built-out upper-left chamber, wall sconces and pipework) and, in the map data, added four collision volumes and two navigation markers while removing one light. Structural validity was necessary; owner review decided whether the room was readable enough to enter the playable build.</figcaption>
+  </figure>
+
+  <div class="tablewrap" role="region" aria-label="The three options, and what happened to each" tabindex="0">
+  <table class="compare">
+    <caption>The three options, and what happened to each</caption>
+    <thead>
+      <tr>
+        <th scope="col">Option</th><th scope="col">Strength</th><th scope="col">Cost or risk</th><th scope="col">Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Runtime generation</th>
+        <td>Maximum variety</td>
+        <td>Validation, debugging, visual flatness, determinism</td>
+        <td>Rejected twice, pre-implementation; not in current scope</td>
+      </tr>
+      <tr>
+        <th scope="row">Hand-authored rooms</th>
+        <td>Maximum control</td>
+        <td>Slowest pool growth</td>
+        <td>Kept for special rooms</td>
+      </tr>
+      <tr>
+        <th scope="row">Offline generation + curation</th>
+        <td>Repeatable, with a human gate</td>
+        <td>Finite pool, review time</td>
+        <td>Selected</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="takeaway"><b>Why this mattered:</b> the most technologically ambitious option was not automatically the best product decision. The selected approach optimized for player-facing quality, inspectability, and maintainability.</p>
+</section>
+
+<!-- ============================================================ AI-output evaluation -->
+<section class="section" aria-labelledby="evaluation-h">
+  <h2 id="evaluation-h">Passing every automated check was not the same as being right</h2>
+
+  <p>The clearest evidence that the review gate works is a defect automation could not have caught.</p>
+  <p>During owner playtesting for a later milestone, I found a pre-existing rule error: the game offered an escape option during a mandatory encounter. Automated checks could not exercise the relevant Phaser scene, so I blocked closure of the current milestone, traced the duplicated classification rule, directed the fix, and added the strongest feasible regression coverage.</p>
+
+  <h3>What changed</h3>
+  <ul class="bullets">
+    <li>The battle screen re-derived encounter classification from the wrong input. The correction made the already-computed classification the single source of truth.</li>
+    <li>Five regression tests were added, including a compensating source-level rail.</li>
+    <li>That scene layer cannot be behaviorally exercised by the current automated runner. This is why human playtesting remains mandatory.</li>
+  </ul>
+
+  <!-- Sanitized excerpt, same treatment as the card above: semantic HTML, with the
+       quotation and the paraphrase visually distinct and labelled. -->
+  <figure class="evidence">
+    <div class="evidence__card">
+      <p class="evidence__label">Sanitized excerpt from the Tower Delver validation policy</p>
+
+      <p class="evidence__kind evidence__kind--quote">Quoted from the policy<span class="evidence__hint"> · source wording preserved; punctuation and formatting normalized for this page</span></p>
+      <blockquote class="evidence__quote">
+<pre>The test suite is node-only and pure-logic. No test imports the game engine or instantiates a Scene.
+
+So the suite gives zero runtime coverage of: scene lifecycle, rendering, camera/zoom, input and
+controller handling, battle presentation and VFX, dialogue/menu interaction, and audio.
+
+A green full suite is NOT evidence that any of that works. When a change materially touches those
+areas, a manual in-game smoke test is required in addition, and it is the real gate, not a formality.</pre>
+      </blockquote>
+
+      <p class="evidence__kind evidence__kind--para">Paraphrase, written for this page, not from the document</p>
+      <p class="evidence__para">I wrote this rule against my own interest. It is why the automated suite is never quoted here as proof that the game works, and why no milestone was approved without me playing it.</p>
+    </div>
+    <figcaption><b>Why this mattered:</b> the project's own validation policy records in writing that a green automated suite is not evidence for the layer a human has to play, which is why a manual playtest is a required gate, not a courtesy. Sanitized excerpt; quoted lines are marked, with punctuation normalized for this page.</figcaption>
+  </figure>
+
+  <p class="takeaway"><b>What changed after evaluation:</b> the defect became a single-source rule, a regression test, and a standing reason the playtest gate is not optional.</p>
+</section>
+
+<!-- ============================================================ Results and lessons -->
+<section class="section" aria-labelledby="results-h">
+  <h2 id="results-h">Results and lessons</h2>
+  <p>The product is a playable vertical slice spanning ten major player-facing systems: exploration, turn-based combat, classes and skills, progression, equipment and rewards, run structure, environmental hazards, shops and run economy, persistence, and a curated battle-room pool.</p>
+  <p>An automated logic suite covers combat math, progression, generation, and persistence. It does not execute Phaser scenes, rendering, input, or audio, so those layers require owner playtesting before milestone approval.</p>
+  <p class="closing">The lesson was not how to produce more output, but how to design a system that makes AI output reviewable, testable, reversible, and subordinate to product outcomes. AI accelerated delivery; judgment and accountability remained mine.</p>
+  <p class="provenance">Product state and evidence verified August 2026.</p>
+</section>
+
+</main>
+
+<!-- ============================================================ Footer and links -->
+<footer class="cta" aria-labelledby="cta-h">
+  <h2 id="cta-h" class="visually-hidden">Links</h2>
+  <p>Interested in building products with AI without surrendering product judgment? The demo is at the top of the page, and my other work is on my portfolio.</p>
+  <p class="cta__actions">
+    <a class="btn btn--primary" href="https://jeiku.github.io/" rel="noopener">View my portfolio</a>
+    <a class="btn" href="#demo">Watch the demo</a>
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

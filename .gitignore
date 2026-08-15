@@ -1,0 +1,12 @@
+# Private working area: evidence, audit records, and owner-review material.
+# NEVER tracked. Nothing under here may reach a public build or a Pages source.
+.private/
+
+# Local tooling noise
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Local subpath-preview scratch (see README)
+preview/
