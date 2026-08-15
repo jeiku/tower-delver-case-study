@@ -52,7 +52,9 @@ entirely in `styles.css`, so prose edits cannot break the layout.
 
 ## Deploy it
 
-Not deployed yet. When it is time:
+The case study is deployed at https://jeiku.github.io/tower-delver-case-study/.
+
+Pages configuration, kept here as maintenance documentation:
 
 1. Repository **Settings → Pages**.
 2. Source: **Deploy from a branch** → branch `main`, folder `/ (root)`.
